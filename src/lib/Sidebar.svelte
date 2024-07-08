@@ -8,7 +8,6 @@
   import Supabase from './supabase.js';
 
   export let siteid = "";
-  export let nickname = "";
   export let selected = "";
   export let color;
 

@@ -6,7 +6,6 @@
   import { SITELESS_COLOR } from '../lib/const.js'
 
   export let siteid = "";
-  export let nickname = "";
   export let selected;
   export let title;
   export let color = SITELESS_COLOR;
@@ -19,7 +18,7 @@
 <main class="w-screen h-screen flex">
   <!-- this doesn't work, need some way of enforcing fixed width?? -->
   <div class="h-full w-80">
-    <Sidebar siteid={siteid} nickname={nickname} selected={selected} color={color}/>
+    <Sidebar siteid={siteid} selected={selected} color={color}/>
   </div>
   <div class="h-full w-full flex flex-col justify-between items-center bg-white shadow-xl rounded-sm">
     <div class="w-[768px] py-8 flex flex-col justify-start">

@@ -34,13 +34,25 @@
 {#await promise}
 ...
 {:then res}
-<Page title="Traffic Overview" selected="overview" siteid={res["site"]["id"]} nickname={res["site"]["nickname"]} color={res["site"]["color"]}>
-  <div class="mb-8">
-    <Controller siteid={res["site"]["id"]} store={res["store"]} color={res["site"]["color"]}/>
+<Page title={res["site"]["nickname"]} selected="overview" siteid={res["site"]["id"]} color={res["site"]["color"]}>
+  <div class="mb-4 w-full flex items-center">
+    <div class="mr-4 grow-0">Today's Traffic</div>
+    <hr class="grow border-gray-12/20"/>
   </div>
-  <!-- negative margin so left edge lines up, still deciding if I like it -->
-  <div class="-ml-9">
-    <Chart variety="timeseries" params={res["store"]} groupby="statuscode" color={res["site"]["color"]}/>
+  <div class="mb-4 grid grid-cols-3 gap-4">
+    <div class="h-24 bg-{res["site"]["color"]}-2 rounded shadow-md"></div>
+    <div class="h-24 bg-{res["site"]["color"]}-2 rounded shadow-md"></div>
+    <div class="h-24 bg-{res["site"]["color"]}-2 rounded shadow-md"></div>
+  </div>
+  <div class="mb-4 w-full flex items-center">
+    <div class="mr-4 grow-0">Recent Deployments</div>
+    <hr class="grow border-gray-12/20"/>
+  </div>
+  <div class="w-full flex flex-col">
+    <div class="h-12 mb-4 bg-{res["site"]["color"]}-2 rounded-sm shadow"></div>
+    <div class="h-12 mb-4 bg-{res["site"]["color"]}-2 rounded-sm shadow"></div>
+    <div class="h-12 mb-4 bg-{res["site"]["color"]}-2 rounded-sm shadow"></div>
+    <div class="h-12 mb-4 bg-{res["site"]["color"]}-2 rounded-sm shadow"></div>
   </div>
 </Page>
 {:catch err}

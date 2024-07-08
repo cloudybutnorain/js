@@ -16,14 +16,14 @@
     ...THINKING...
   {:then sites}
     {#if (sites.length == 0)}
-      <div class="w-full h-full flex justify-center items-center">
+      <div class="mt-2 w-full h-full flex justify-center items-center">
         <div class="flex flex-col justify-between items-center bg-{SITELESS_COLOR}-1 shadow-md rounded p-8">
           <div class="mb-1">You haven't created any sites yet!</div>
           <div class="mb-1">Click <a class="underline" href="#/create">here</a> to get started, or <a class="underline" target="_blank" href="https://docs.cbnr.xyz/pages/creating.html">here</a> for the docs.</div>
         </div>
       </div>
     {:else}
-      <div class="grid grid-cols-3 gap-4">
+      <div class="mt-2 grid grid-cols-3 gap-4">
         {#each sites as site}
           <SiteRow site={site} />
         {/each}
